@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .chart-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Uploaded Data Preview</h1>
+        <div>
+            {{ data_preview|safe }}
+        </div>
+        <h2>Chart</h2>
+        <div class="chart-container">
+            {% if chart_image %}
+                <img src="data:image/png;base64,{{ chart_image }}" alt="Chart">
+            {% else %}
+                <p>No chart available.</p>
+            {% endif %}
+        </div>
+        <div class="container">
+    <h1>Data Analysis</h1>
+    <div>
+        {{ descriptive_stats|safe }}
+    </div>
+    <!-- Remaining content -->
+</div>
+
+    </div>
+</body>
+</html>
